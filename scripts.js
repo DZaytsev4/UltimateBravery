@@ -290,6 +290,17 @@ const boots =[
 
 ];
 
+const summons = [
+ {name: "Heal", image: ""},
+ {name: "Ghost", image: ""},
+ {name: "Barrier", image: ""},
+ {name: "Exhaust", image: ""},
+ {name: "Teleport", image: ""},
+ {name: "Flash", image: ""},
+ {name: "Cleanse", image: ""},
+ {name: "Ignite", image: ""}
+];
+
 const runePaths = [
   {
     id: 1,
@@ -539,8 +550,38 @@ function randomRunes() {
   });
 }
 
+function randomSummoners() {
+ const availableSummoners = [...summons];
+ const selectedSummoners = [];
+
+ var save = -1;
+ for (let i = 0; i < 2 && availableSummoners.length > 0; i++) {
+  var randomIndex = Math.floor(Math.random() * availableSummoners.length);
+  while (save == randomIndex) {
+   randomIndex = Math.floor(Math.random() * availableSummoners.length);
+  }
+  selectedSummoners.push(availableSummoners.splice(randomIndex, 1)[0]);
+  save = randomIndex;
+ } 
+
+ selectedSummoners.forEach((spell, index) => {
+  const spellNumber = index + 1;
+  document.getElementById(`img_spell_${spellNumber}`).src = spell.image;
+  document.getElementById(`name_spell_${spellNumber}`).textContent = spell.name;
+ });
+} 
+
+function randomSkill() {
+ const skills = ["Q", "W", "E"];
+ const randomIndex = Math.floor(Math.random() * 3);
+
+ document.getElementById('name_skill').textContent = skills[randomIndex];
+}
+
 document.querySelector(".btn").addEventListener("click", () => {
   randomChampion();
   randomBuild();
   randomRunes();
+  randomSkill();
+  randomSummoners();
 });
