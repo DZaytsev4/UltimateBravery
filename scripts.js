@@ -291,14 +291,14 @@ const boots =[
 ];
 
 const summons = [
- {name: "Heal", image: ""},
- {name: "Ghost", image: ""},
- {name: "Barrier", image: ""},
- {name: "Exhaust", image: ""},
- {name: "Teleport", image: ""},
- {name: "Flash", image: ""},
- {name: "Cleanse", image: ""},
- {name: "Ignite", image: ""}
+ {name: "Heal", image: "images_summoners/heal.png"},
+ {name: "Ghost", image: "images_summoners/ghost.png"},
+ {name: "Barrier", image: "images_summoners/barrier.png"},
+ {name: "Exhaust", image: "images_summoners/exhaust.png"},
+ {name: "Teleport", image: "images_summoners/teleport.png"},
+ {name: "Flash", image: "images_summoners/flash.png"},
+ {name: "Cleanse", image: "images_summoners/cleanse.png"},
+ {name: "Ignite", image: "images_summoners/ignite.png"}
 ];
 
 const runePaths = [
